@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--STYLE-->
+    <link rel="stylesheet" href="style.css">
+    <!--SCRIPT-->
+    <script src="script00.js" defer></script>
+    <title>game</title>
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Fugaz+One&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krub:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Lexend:wght@100..900&family=Limelight&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="bodyGame">
+
+    <div class="userSpaceCon">
+    <img src="img/logos/game/iconos/menu/mdi_user.png">
+    <h2 class="userName">Nombre de usuario</h2>
+    <h2 class="pointsUser">34</h2>
+    </div>
+
+    <!-- <h2 class="logoGame">FLIX&CHILL</h2> -->
+    <!--espacio del contrincante    pvp o maquina-->
+    <section class="contrincante">
+        <div class="cartaContrincante" id="cartaContrincante1" draggable="true">
+        </div>
+        <div class="cartaContrincante" id="cartaContrincante2" draggable="true">
+        </div>
+        <div class="cartaContrincante" id="cartaContrincante3" draggable="true">
+        </div>
+        <div class="mazoContrincante" id="cartaContrincante4" >
+        </div>
+    </section>
+    <!--tengo aracnofobia y estoy viendo al Rubius jugar a un juego de arañas gigantes <3-->
+    <main class="zonaJuego">
+        <div class="zonaDrop" id="zonaCentro1">
+        </div>
+        <div class="zonaDrop" id="zonaCentro2">
+        </div>
+        <div class="zonaDrop" id="zonaCentro3">
+        </div>
+    </main>
+    <div class="btnSpace">
+        <button class="btnRobar" onclick="RobarCartas('usuario')">robar carta</button>
+        <button class="btnRobar" onclick="pasarTurno()">Pasar turno</button>
+    </div>
+
+        <div class="userSpaceConUsr">
+            <img src="img/logos/game/iconos/menu/mdi_user.png">
+            <h2 class="userName">Nombre de usuario</h2>
+            <h2 class="pointsUser">34</h2>
+        </div>
+
+    <div class="turnos">
+        <h2 class="turnosTexto">Turno:</h2>
+        <h2 class="turnosTextoPuntuacion">1</h2>
+    </div>
+    <!--espacio del usuario-->
+    <section class="contrincante-user">
+        <div class="cartaUsuario" id="cartaUsuario1" draggable="true">
+        </div>
+        <div class="cartaUsuario" id="cartaUsuario2" draggable="true">
+        </div>
+        <div class="cartaUsuario" id="cartaUsuario3" draggable="true">
+        </div>
+        <div class="mazoUser" id="cartaUsuario4" >
+        </div>
+    </section>
+<div class="contWinWin" id="mensajeGanador">
+    <p class="fontWinWin">Has ganado!</p>
+</div>
+<div class="contPerdedorLoser" id="mensajePerdedor">
+    <p class="fontWinWin">Has perdido!</p>
+</div>  
+    
+</body>
+
+</html>

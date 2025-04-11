@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5"
+  },
+  "name": "proyecto-skibidi-rizz",
+  "version": "1.0.0",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
