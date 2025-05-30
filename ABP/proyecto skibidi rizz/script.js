@@ -1,3 +1,5 @@
+  
+ 
  function toggleInfo(){
     const contenedor = document.getElementById("informaciones");
     const info1 = contenedor.querySelector('.infointerna1');
@@ -80,3 +82,15 @@ obtenerHistorial(historial,histnum);
 const change = document.getElementById("toggleImg")
 change.addEventListener("click", toggleInfo);
 
+function startGame(){
+    const contenedor = document.getElementById("disclaimer");
+    if(contenedor.style.display === "none" || contenedor.style.display === ""){
+        contenedor.style.display = "flex";
+    }
+    else{
+        contenedor.style.display = "none"
+    }
+
+}
+const change2 = document.getElementById("play")
+change2.addEventListener("click", startGame);

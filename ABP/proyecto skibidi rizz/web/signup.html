@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogIn</title>
+    <title>Signup</title>
     <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -15,14 +16,11 @@
 
 <body>
     <main class="LoginMain">
-
-        <div class="tituloformIn">
-            Formulario de inscripción
-            <div class="lineaIn"></div>
-        </div>
-
-        
-  <div class="pagoIn">
+         <div class="tituloformIn">
+                Formulario para registrarse
+                <div class="lineaIn"></div>
+            </div>
+        <div class="pagoIn">
             <div class="formIn">
                 <div class="CampoInForm">
                     <p class="InLabel">Nombre</p>
@@ -34,9 +32,20 @@
                     <input type="text" class="inputIn" required>
                 </div>
 
-             
+                <div class="enunPagoIn">¿Cómo quieres pagar?</div>
                 <div class="opcionesPagIn">
-                
+                    <div class="opcionPago">
+                        <input type="checkbox" class="boxInputIn" value="DebitCard" required>
+                        <div class="InputIn">Tarjeta de crédito o débito</div>
+                    </div>
+                    <div class="opcionPago">
+                        <input type="checkbox" class="boxInputIn" value="Bizum" required>
+                        <div class="InputIn">Bizum</div>
+                    </div>
+                    <div class="opcionPago">
+                        <input type="checkbox" class="boxInputIn" value="PayPal" required>
+                        <div class="InputIn">PayPal</div>
+                    </div>
                     <div class="sumbitnBtnIn">
                         <input type="submit" class="subInBtn" placeholder="Enviar">
                     </div>
@@ -45,13 +54,9 @@
             <div class="imgRe">
                 <img src="/img/chiquillo.png">
             </div>
-          
-        </div>
-
-        <div class="atrasflechaIn">
-            <a href="index.html">
-                <img src="/img/flechaAtaras.png">
-            </a>
+            <div class="atrasflecha">
+                <a href="index.html"><img src="/img/flechaAtaras.png"></a>
+            </div>
         </div>
     </main>
 </body>

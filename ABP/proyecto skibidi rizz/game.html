@@ -18,28 +18,28 @@
 </head>
 
 <body class="bodyGame">
-
+    <div class="marco"></div>
     <div class="userSpaceCon">
     <img src="img/logos/game/iconos/menu/mdi_user.png">
     <h2 class="userName">Nombre de usuario</h2>
-    <h2 class="pointsUser">34</h2>
+    <h2 class="pointsUser" id="pointsEnemy">34</h2>
     </div>
 
     <!-- <h2 class="logoGame">FLIX&CHILL</h2> -->
     <!--espacio del contrincante    pvp o maquina-->
     <section class="contrincante">
-        <div class="cartaContrincante" id="cartaContrincante1" draggable="true">
+        <div class="cartaContrincante" id="cartaContrincante1">
         </div>
-        <div class="cartaContrincante" id="cartaContrincante2" draggable="true">
+        <div class="cartaContrincante" id="cartaContrincante2">
         </div>
-        <div class="cartaContrincante" id="cartaContrincante3" draggable="true">
+        <div class="cartaContrincante" id="cartaContrincante3">
         </div>
         <div class="mazoContrincante" id="cartaContrincante4" >
         </div>
     </section>
     <!--tengo aracnofobia y estoy viendo al Rubius jugar a un juego de arañas gigantes <3-->
     <main class="zonaJuego">
-        <div class="zonaDrop" id="zonaCentro1">
+        <div class="zonaDropEnemigo" id="zonaCentro1">
         </div>
         <div class="zonaDrop" id="zonaCentro2">
         </div>
@@ -47,14 +47,12 @@
         </div>
     </main>
     <div class="btnSpace">
-        <button class="btnRobar" onclick="RobarCartas('usuario')">robar carta</button>
-        <button class="btnRobar" onclick="pasarTurno()">Pasar turno</button>
     </div>
 
         <div class="userSpaceConUsr">
             <img src="img/logos/game/iconos/menu/mdi_user.png">
             <h2 class="userName">Nombre de usuario</h2>
-            <h2 class="pointsUser">34</h2>
+            <h2 class="pointsUser" id="pointsUser">0</h2>
         </div>
 
     <div class="turnos">
@@ -62,15 +60,12 @@
         <h2 class="turnosTextoPuntuacion">1</h2>
     </div>
     <!--espacio del usuario-->
-    <section class="contrincante-user">
-        <div class="cartaUsuario" id="cartaUsuario1" draggable="true">
+    <section class="contrincante-user" id="contrincante-user">
+        <div class="mazoUser" id="cartaUsuario" onclick="cartaAleatoria('contrincante-user')" >
         </div>
-        <div class="cartaUsuario" id="cartaUsuario2" draggable="true">
-        </div>
-        <div class="cartaUsuario" id="cartaUsuario3" draggable="true">
-        </div>
-        <div class="mazoUser" id="cartaUsuario4" >
-        </div>
+        
+       
+        
     </section>
 <div class="contWinWin" id="mensajeGanador">
     <p class="fontWinWin">Has ganado!</p>
@@ -80,5 +75,4 @@
 </div>  
     
 </body>
-
 </html>

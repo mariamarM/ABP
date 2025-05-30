@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <!--SCRIPT-->
     <script src="script.js" defer></script>
-    <title>home</title>
+    <title>pageFav</title>
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 <body>
    
     <main>
-        <div class="landingPage">
+        <div class="favPage">
             <p class="CFTITLE">favoritas</p>
         </div>
         <div class="containerBtn">
@@ -26,7 +26,7 @@
                 <a href="/index.html" target="_blank">juego</a>
             </div>
             <div class="signin">
-                <a href="about.html" target="_blank">leer más</a>
+                <a href="about.html" target="_blank">sobre f&c</a>
             </div>
         </div>
             <div class="usrbtns">
@@ -37,20 +37,29 @@
                     <a href="login.html" target="_blank">registrate</a>
                 </div>
                 <div class="signin">
-                    <a href="favpage.html" target="_blank"><img src="/img/favicon.png"></a>
+                    <a href="index.html"><img src="/img/favicon.png"></a>
                 </div>
             </div>
         </div>
 
         <div class="filterbar">
-            <div class="tipomedia">
-                <p class="fontgeneric">SERIES</p>
-                <img src="/img/desplegablepng.png">
-            </div>
-            <div class="tipomedia">
-                <p class="fontgeneric">TERROR</p>
-                <img src="/img/desplegablepng.png">
-            </div>
+            <select class="tipomedia">
+                <option value="series" class="fontgeneric">SERIES</option>
+                <option value="peliculas" class="fontgeneric">PELÍCULAS</option>
+            </select>
+
+            <select id="generoSelect" class="tipomedia">
+                <option value="default" class="fontgeneric">MIX</option>
+                <option value="horror" class="fontgeneric">HORROR</option>
+                <option value="comedia" class="fontgeneric">COMEDIA</option>
+                <option value="misterio" class="fontgeneric">MISTERIO</option>
+                <option value="crimen" class="fontgeneric">CRIMEN</option>
+                <option value="fantasia" class="fontgeneric">FANTASÍA</option>
+                <option value="romance" class="fontgeneric">ROMANCE</option>
+                <option value="psicologico" class="fontgeneric">PSICOLÓGICO</option>
+                <option value="drama" class="fontgeneric">DRAMA</option>
+                <option value="animacion" class="fontgeneric">ANIMACIÓN</option>
+            </select>
         </div>
 <!--pelicula contenedores 1-->
         <div class="contenedorImagenes">
@@ -121,7 +130,7 @@
         </div>
     </div>
 </div>
-<!--pelicula contenedor 3-->
+<!-- pelicula contenedor 3
 <div class="contenedorImagenes">
     <div class="pelicula">
         <img src="">
@@ -155,7 +164,7 @@
             <p class="fontmovie">1985</p>
         </div>
     </div>
-</div>
+</div> -->
     </main>
     <footer>
         <h1 class="footerText">Cartas, pelis y risas... 

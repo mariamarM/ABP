@@ -10,9 +10,9 @@ footer {
     height: 832px;
 }
 
-.BackToTop a{
+.BackToTop a {
     text-transform: uppercase;
-    color: #FFF;
+    color: #FFF3DE;
     font-family: "Inter";
     font-size: 16px;
     font-style: normal;
@@ -22,20 +22,21 @@ footer {
     text-decoration: none;
 }
 
-.btnsGameAbout{
+.btnsGameAbout {
     display: flex;
     gap: 40px;
 }
+
 .socialsTop {
     position: absolute;
     margin-top: 200px;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    background: #000;
+    background: #252525;
     width: -webkit-fill-available;
     height: 47px;
     display: flex;
-    gap:40%;
+    gap: 40%;
     flex-direction: row;
     padding: 40px;
     align-items: flex-start;
@@ -44,7 +45,7 @@ footer {
 }
 
 .footerText {
-    color: #FFF;
+    color: #FFF3DE;
     font-family: Inter;
     font-size: 70px;
     font-style: normal;
@@ -53,15 +54,17 @@ footer {
     padding: 80px 180px;
     width: 800px;
 }
-.sociales{
+
+.sociales {
     display: flex;
-        align-content: center;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: nowrap;
-        flex-direction: row;
-        gap: 20px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 20px;
 }
+
 .newsletterAnnounce {
     display: flex;
     gap: 340px;
@@ -72,7 +75,7 @@ footer {
 }
 
 .subtextFooter {
-    color: #FFF;
+    color: #FFF3DE;
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -102,7 +105,7 @@ footer {
 
 .emailput input {
     background-color: #4D6947;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #FFF3DE;
     border-top: 1px solid #4D6947;
     border-right: 1px solid #4D6947;
     border-left: 1px solid #4D6947;
@@ -111,8 +114,50 @@ footer {
 
 /*MAIN*/
 .landingPage {
+    width: 200px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+}
+.prices a{
+  display: flex;
+    height: 34px;
+    padding: 5px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 10px;
+    background-color: #4f6b3d;
+    color: #FFF3DE;
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.aboutusland {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 140px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #252525;
+    margin: 0px;
+}
+
+.CFTITLEIndex {
+    text-align: center;
+    font-family: "Inter";
+    font-size: 140px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #252525;
+
 }
 
 .CFTITLE {
@@ -123,14 +168,14 @@ footer {
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
-    color: #4B4B4B;
+    color: #252525;
     margin: 0px;
 
 }
 
 .CFsubtitle {
     text-align: center;
-    color: #000;
+    color: #252525;
     font-family: "Inter";
     font-size: 12px;
     margin-left: 470px;
@@ -138,20 +183,42 @@ footer {
     width: 945px;
 
 }
-.contenedorImagenes{
-    display: flex;
-    flex-direction: row; 
-        align-items: center;
-        justify-content: space-evenly;
-        font-family: 'Inter';
 
+.contenedorImagenes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Inter';
 }
-.imgPelicula{
-    border: 1px solid #AE825B;
+
+.pelicula a {
+    text-decoration: none;
+    color: #4B4B4B;
+}
+
+.imgPelicula {
+    /* border: 1px solid #AE825B;*/
     border-radius: 10px;
     width: 470px;
-    height: 270px;
+    /* height: 270px;*/
 }
+
+.buscadorIndex {
+    border: 1px solid #4B4B4B;
+    border-radius: 10px;
+    background-color: #FFF3DE;
+    padding: 10px;
+}
+/* .pelicula{
+    width: max-content;
+} */
+.btnBuscar {
+    border-radius: 10px;
+    background-color: #4B4B4B;
+    color: #FFF3DE;
+}
+
 .containerBtn {
     margin-left: 0px;
     display: flex;
@@ -160,10 +227,10 @@ footer {
     padding: 12px 13px;
     justify-content: center;
     align-items: center;
-    gap: 1061px;
+    gap: 700px;
 }
 
-.btnGame a{
+.btnGame a {
     display: flex;
     height: 34px;
     padding: 5px 20px;
@@ -171,7 +238,7 @@ footer {
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-    background-color: #0F0F0F;
+    background-color: #252525;
     color: #FFF3DE;
     font-family: "Inter";
     font-size: 12px;
@@ -185,21 +252,23 @@ footer {
     flex-direction: row;
     gap: 20px;
 }
+
 .usrReadmore {
- position: absolute;
- top: 31%;
- left:50%;
+    position: absolute;
+    top: 31%;
+    left: 50%;
 }
-.signin  a{
+
+.signin a {
     border-radius: 10px;
-    border: 1px solid #000;
+    border: 1px solid #252525;
     display: flex;
     height: 34px;
     padding: 5px 20px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #000;
+    color: #252525;
     font-family: "Inter";
     font-size: 12px;
     font-weight: 400;
@@ -220,14 +289,619 @@ footer {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    width: 100px;
+    background-color: #FFF3DE;
+    border: none;
     align-items: center;
-    color: #000;
+    color: #4B4B4B;
     font-family: "Inter";
-    font-size: 12px;
+    font-size: 18px;
     font-weight: 400;
 }
+
 
 .tipomedia img {
     height: 10px;
     width: auto;
+}
+
+/*FAVPAGE*/
+.favPage {
+    border-radius: 0px 0px 30px 30px;
+    border: 1px solid #252525;
+    background: #F2B038;
+    padding: 50px;
+    margin-bottom: 40px;
+}
+
+/*ABOUT US NOSOTROS NUESTRA MISION*/
+.lineaUss {
+    background-color: #4D6947;
+    height: 4px;
+    width: 400px;
+    position: absolute;
+    top: 38%;
+    left: 30%;
+}
+
+.AtrasFelchaUs {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.botoneraaboutus {
+    margin-top: 250px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.titulitis {
+    color: rgba(255, 243, 222, 0.80);
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.misionletra {
+    width: 500px;
+}
+
+.juegoflixletra {
+    width: 500px;
+}
+
+.titulitis img {
+    width: 40px;
+    height: 40px;
+}
+
+.juegofix {
+    border-radius: 30px 30px 0px 0px;
+    background: #F2B038;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    padding: 30px 43px 46px 110px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: absolute;
+    bottom: 230px;
+    height: 100px;
+}
+
+.titulitisMision {
+    display: flex;
+    flex-direction: row;
+    gap: 1200px;
+    color: rgba(255, 243, 222, 0.80);
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.titulitisJuego {
+    display: flex;
+    flex-direction: row;
+    gap: 1205px;
+    color: rgba(255, 243, 222, 0.80);
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    align-items: center;
+
+}
+
+.titulitisEquipo {
+    display: flex;
+    flex-direction: row;
+    gap: 1192px;
+    color: rgba(255, 243, 222, 0.80);
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.nuestramision {
+    border-radius: 30px 30px 0px 0px;
+    background: #4D6947;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+    padding: 30px 43px 46px 110px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: absolute;
+    height: 100px;
+    bottom: 100px;
+}
+
+.titulitisMision img {
+    width: 40px;
+    height: 40px;
+}
+
+.nuestroquiepo {
+    position: absolute;
+    bottom: 0px;
+    height: 80px;
+    border-radius: 30px 30px 0px 0px;
+    background: #AE5B5D;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+    padding: 30px 43px 33px 124px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    align-items: center;
+}
+
+.displayequipo {
+    display: none;
+}
+
+/*MAIN MOVIE*/
+.descrMainP {
+    color: #4B4B4B;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+}
+
+/*LOGIN /SIGNIN*/
+.LoginMain {
+    margin: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tituloformIn {
+    color: #4B4B4B;
+    font-family: Inter;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.lineaIn {
+    width: 660px;
+    height: 5px;
+    background: #4D6947;
+}
+
+.imgIn {
+    width: auto;
+}
+
+.formIn {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 300px;
+}
+
+.InLabel,
+.InputIn {
+    color: #4B4B4B;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.inputIn {
+    width: 224px;
+    height: 35px;
+    border-radius: 30px;
+    border: 1px solid #4B4B4B;
+    background-color: #FFF3DE;
+}
+
+.pagoIn {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    top: 40%;
+    left: 25%;
+    width: fit-content;
+    border: 1px solid #4D6947;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+.opcionesPagIn {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 15px;
+}
+
+.opcionPago {
+    display: flex;
+    flex-direction: row;
+}
+
+.enunPagoIn {
+    color: #4B4B4B;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.subInBtn {
+    display: flex;
+    width: 103px;
+    padding: 10px 25px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    border-radius: 25px;
+    color: #FFF3DE;
+    text-align: center;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: #4D6947;
+}
+
+.atrasflecha {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+}
+
+.atrasflecha img {
+    width: 25px;
+    height: auto;
+}
+
+.atrasflechaIn {
+    position: absolute;
+    top: 15%;
+    lefT: 80%;
+    width: 25px;
+    height: auto;
+}
+
+/*LOGIN*/
+.imgIn {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}
+
+/*DISPLAYS DE ABOUT US*/
+.displayjuegoland,
+.displaymisionletra,
+.displayequipo {
+    display: none;
+}
+
+.displayequipo {
+    background-color: #AE5B5D;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 2%;
+    width: 1000px;
+    height: 80px;
+    gap: 100px;
+    flex-direction: row;
+    padding: 20px 20px;
+
+}
+
+.nombreequipo {
+    color: #FFF3DE;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+
+}
+
+.usuario {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.displayjuegoland {
+    border: 1px solid #F2B038;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 263%;
+    left: 63%;
+    width: 600px;
+    padding: 15px 20px;
+
+}
+
+.juegoTxt {
+    color: #F2B038;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.displaymisionletra {
+    border: 1px solid #4D6947;
+    border-radius: 20px;
+    position: absolute;
+    bottom: 263%;
+    left: 63%;
+    width: 600px;
+    padding: 10px 20px;
+
+}
+
+.misionText {
+    color: #4D6947;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+/*MAIN MOVIE*/
+.flechaAtrasMain {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
+.tituloMainP {
+    color: #4B4B4B;
+    font-family: Inter;
+    text-transform: uppercase;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.imagenMainP {
+    border: 1px solid #AE825B;
+    border-radius: 20px;
+    width: 800px;
+    height: 600px;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+
+}
+
+
+
+.body-precios {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #4f6b3d;
+    color: white;
+    text-align: center;
+}
+
+.contenedor {
+    padding: 40px 20px;
+}
+
+h1.price {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.1em;
+    margin-bottom: 40px;
+}
+
+.planes {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background-color: #f8cf92;
+    border-radius: 20px;
+    width: 250px;
+    padding: 25px 20px;
+    margin: 60px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.tarjeta h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.icono {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.precio {
+    font-size: 1.8em;
+    margin: 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 20px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+.boton {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.basico {
+    background-color: #a44f4f;
+    color: white;
+}
+
+.tarjeta.basico {
+    background-color: var(--color-sextario)
+}
+
+.boton.basico {
+    background-color: #a44f4f;
+    color: white;
+}
+
+.boton.basico:hover {
+    background-color: #472733;
+    /* un tono mÃ¡s oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta.standard {
+    background-color: var(--color-sextario)
+}
+
+.boton.standard {
+    background-color: #a28b94;
+    color: white;
+}
+
+.boton.standard:hover {
+    background-color: #463e31;
+    /* un tono mÃ¡s oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta.premium {
+    background-color: var(--color-sextario)
+}
+
+.boton.premium {
+    background-color: #f9b428;
+    color: white;
+}
+
+.boton.premium:hover {
+    background-color: #9c7126;
+    /* un tono mÃ¡s oscuro */
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+:root {
+    --color-primario: #4D6947;
+    /*verde oscuro*/
+    --color-secundario: #F2B038;
+    /*amarillo*/
+    --color-terciario: #ae5b5d;
+    /*rojo*/
+    --color-cuaternario: #FFF3DE;
+    /*blanco*/
+    --color-quintario: #B7A2A2;
+    /*gris claro*/
+    --color-sextario: #EEBD86;
+    /*beige claro*/
+    --color-septimo: #AE825B;
+    /*marrÃ³n*/
+}
+
+.cajita {
+    background-color: #ae5b5d;
+    border-radius: 20px 20px 0 0;
+    /* Solo bordes superiores redondeados */
+    padding: 20px;
+    margin-top: -27px;
+    /* Ajusta segÃºn el diseÃ±o */
+    width: 100%;
+    height: auto;
+    /* O ajusta segÃºn contenido */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cajita2 {
+    background-color: #B7A2A2;
+    border-radius: 20px 20px 0 0;
+    /* Solo bordes superiores redondeados */
+    padding: 20px;
+    margin-top: -27px;
+    /* Ajusta segÃºn el diseÃ±o */
+    width: 100%;
+    height: auto;
+    /* O ajusta segÃºn contenido */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.cajita3 {
+    background-color: #F2B038;
+    border-radius: 20px 20px 0 0;
+    /* Solo bordes superiores redondeados */
+    padding: 20px;
+    margin-top: -27px;
+    /* Ajusta segÃºn el diseÃ±o */
+    width: 100%;
+    height: auto;
+    /* O ajusta segÃºn contenido */
+    color: white;
+    font-weight: bold;
+    text-align: center;
 }
