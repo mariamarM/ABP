@@ -20,9 +20,9 @@
 <body class="bodyGame">
     <div class="marco"></div>
     <div class="userSpaceCon">
-    <img src="img/logos/game/iconos/menu/mdi_user.png">
-    <h2 class="userName">Nombre de usuario</h2>
-    <h2 class="pointsUser" id="pointsEnemy">34</h2>
+        <img width="30px" src="img/logos/game/iconos/menu/user_icon.png">
+        <h2 class="userName">Nombre de usuario</h2>
+        <h2 class="pointsUser" id="pointsEnemy">0</h2>
     </div>
 
     <!-- <h2 class="logoGame">FLIX&CHILL</h2> -->
@@ -50,14 +50,18 @@
     </div>
 
         <div class="userSpaceConUsr">
-            <img src="img/logos/game/iconos/menu/mdi_user.png">
+            <img width="30px" src="img/logos/game/iconos/menu/user_icon.png">
             <h2 class="userName">Nombre de usuario</h2>
             <h2 class="pointsUser" id="pointsUser">0</h2>
         </div>
 
     <div class="turnos">
         <h2 class="turnosTexto">Turno:</h2>
-        <h2 class="turnosTextoPuntuacion">1</h2>
+        <h2 id="turnos" class="turnosTextoPuntuacion">1</h2>
+    </div>
+    <div class="maximo">
+        <h2 class="turnosTexto">Meta:</h2>
+        <h2 id="maximo" class="turnosTextoPuntuacion">1</h2>
     </div>
     <!--espacio del usuario-->
     <section class="contrincante-user" id="contrincante-user">
@@ -67,11 +71,13 @@
        
         
     </section>
-<div class="contWinWin" id="mensajeGanador">
-    <p class="fontWinWin">Has ganado!</p>
+<div class="contPerdedorLoser" id="mensajeGanador">
+    <h1 class="fontWinWin">¡Has Ganado!</h1>
+    <a href="/index.html"><button><strong>BACK TO MENU</strong></button></a>
 </div>
 <div class="contPerdedorLoser" id="mensajePerdedor">
-    <p class="fontWinWin">Has perdido!</p>
+    <h1 class="fontWinWin">¡Has perdido!</h1>
+    <a href="/index.html"><button><strong>BACK TO MENU</strong></button></a>
 </div>  
     
 </body>

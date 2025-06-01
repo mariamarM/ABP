@@ -1,7 +1,18 @@
     const cartas = document.querySelectorAll(".cartaUsuario");
+    const contadorTurno = document.getElementById("turnos");
+    var turno = 1;
+
+    //meta random
+    const contadorRandom = document.getElementById("maximo");
+    var numRandom = 40;
+    contadorRandom.innerHTML = numRandom;
+
     cartas.forEach(carta => {
         console.log(carta); 
     });
+
+
+
 
 cartas.forEach(carta => {
     carta.addEventListener("dragstart", function(e) {
@@ -31,6 +42,7 @@ document.querySelectorAll(".zonaDrop").forEach(zona => {
             var numero = carta.querySelector("span").textContent;
             console.log(numero);
             contadorPlayer(numero, "pointsUser");
+            
         }
         if (carta) {
 
@@ -42,8 +54,11 @@ document.querySelectorAll(".zonaDrop").forEach(zona => {
             
             
         }
-        e.target.appendChild(carta);
+        e.target.appendChild(carta);       
         enemyMovment();
+        turno = turno + 1;
+        contadorTurno.innerHTML= turno;
+        comrpobarEnemigo()
         });
     });
 //funciones de juego
@@ -87,6 +102,7 @@ function contadorEnemigo(numero, pointsChard){
     console.log(playerCount)
     const contadorPlayer = document.getElementById(pointsChard);
     contadorPlayer.innerHTML = playerCount;
+    comprobaruser(contadorPlayer);
 }
 var jugador = []
 function cartaAleatoria(contenedor){
@@ -102,7 +118,7 @@ function cartaAleatoria(contenedor){
         card.setAttribute('id', id);
         card.setAttribute('draggable', 'true')
         card.innerHTML =`
-        <div style="width:20px; height:20px;display:flex; align-items:center; justify-content:center;"><span>${numero}</span></div><strong>${palo}</strong>
+        <div style="width:20px; height:20px;display:flex; align-items:center; justify-content:center;"><span>${numero}</span></div><strong class="palo">${palo}</strong>
         `
         console.log(card)  
         contenedor_cartas.appendChild(card); 
@@ -176,20 +192,23 @@ function CalcularPuntuacion(){
 
 }
 
-function DeclararGanador(cartaUsuario, cartaContrincant){
-    mensajeGanador = document.getElementById('mensajeGanador');
-    mensajeLoser = document.getElementById('mensajePerdedor');
 
-    if(cartaUsuario > cartaContrincante){
-        mensajeGanador.style.display.block;
-        mensajeGanador.style.font.color.red;
-    }else{
-        mensajePerdedor.style.display.block;
-    }
-
-}
 function RobarCartas(){
     
+}
+
+function comprobaruser(contador){
+    const numero = contador.textContent;
+    if(numero > numRandom){
+        const derrota = document.getElementById('mensajePerdedor');
+        derrota.style.display = "flex";
+    }
+
+
+    if(numero == numRandom){
+        const victoria = document.getElementById('mensajeGanador');
+        victoria.style.display = "flex";
+    }
 }
 
 
@@ -241,6 +260,18 @@ function RobarCartas(){
 //   }
 // window.onload = iniciarJuego;  
 // //cartaAleatoria();
+
+function comrpobarEnemigo(){
+    const puntuacion = document.getElementById('pointsEnemy').textContent;
+    if(puntuacion > numRandom){
+        const victoria = document.getElementById('mensajeGanador');
+        victoria.style.display = "flex";
+    }
+    if(puntuacion = numRandom){
+        const derrota = document.getElementById('mensajePerdedor');
+        derrota.style.display = "flex";
+    }
+}
 
 function gameStart(){
     cartaAleatoria("contrincante-user");

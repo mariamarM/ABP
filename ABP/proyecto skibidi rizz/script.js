@@ -16,10 +16,10 @@
 
 const globals = []; 
 var num = 1;
-var tamañoMax = 6;
+var tamañoMax = 4;
 async function obtenerGlobales(globals, num) { 
     
-    while(num < tamañoMax){
+    while(num <= tamañoMax){
         const url = `http://172.17.40.20:8000/users/${num}`;
         const response =  await fetch(`${url}`);
         const data = await response.json();

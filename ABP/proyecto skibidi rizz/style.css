@@ -1,9 +1,9 @@
 body{
     margin:0;
-    background-color: #4D6947;
+    background-color: #ffffff;
         background-image: url('/img/cartas/fondo.png');
         background-repeat: repeat;
-         /* O auto para que se ajuste al tamaño del contenedor */
+        font-family: 'inter';
 }
 
 .disclaimer{
@@ -32,12 +32,12 @@ body{
 /*historial de cartas*/
 .gamehistory{
     border-radius:20px;
-
+    box-shadow: 0px 10px 10px 17px rgba(153, 230, 106, 0.425);
     height: 50vh;
     width: 25vw;
     background-color:rgba(185, 250, 123, 0.384);
     position: absolute;
-    margin-left: 36.3vw;
+    margin-left: 35.8vw;
     margin-top: 45vh;
 }
 
@@ -51,6 +51,7 @@ body{
     text-align: center;
 }
 .gameglobals{
+    box-shadow: 0px 10px 10px 17px rgba(153, 230, 106, 0.425);
     border-radius:20px;
     height: 63vh;
     width: 28vw;
@@ -58,20 +59,36 @@ body{
     position: absolute;
     margin-top: -1.2vh;
 }
-
+.title {
+    font-size: 10vw;
+    position: relative;
+    margin-bottom: 0px;
+    margin-left: 1vw;
+    background-image: url(/img/blackjackbg.jpg);
+    background-size: cover;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
 .title_div{
-    margin-left: 36vw;
+    margin-top: -10vh;
+    margin-left: 21vw;
     position: absolute;
     text-align: center;
 }
 .globalscard{
-    background-color: aquamarine;
+    background-color: rgb(250, 235, 215);
     margin-left: 1.5vw;
     margin-top: 2vh;
     width: 25vw;
     height: 6vh;
     display: flex;
     justify-content: center;
+    border-radius: 5px;
+    transition:0.07s;
+    
 }
 
 .historycard{
@@ -85,22 +102,41 @@ body{
 
     padding-left: 10px;
 }
-.historyinfos{ display:flex; height: 6vh; width: 19vh; background-color: antiquewhite; align-items: center;}
+.historyinfos{ 
+    display:flex; 
+    height: 6vh; 
+    width: 19vh; 
+    background-color: antiquewhite; 
+    align-items: center;
+    border-radius: 5px;
+    transition:0.07s;
+}
+
+.historyinfos:hover {
+    background-color:rgb(243, 228, 140);
+    transition:0.07s;
+}
+.globalscard:hover {
+    background-color:rgb(243, 228, 140);
+    transition:0.07s;
+}
 .imgusers{
     width: 30px;
     height: 18px;
+    margin-left: 10px;
 
 }
 .informaciones{
 
     width: 35vw;
-    height: 55vh;
+    height: 49vh;
     position:absolute;
     margin-left: 63vw;
     margin-top: 40vh;
 }
 .infointerna1{
     border-radius: 7px;
+    box-shadow: 0px 10px 10px 17px rgba(153, 230, 106, 0.425);
     background-color: rgba(185, 250, 123, 0.384);
     margin-top: 6vh;
     width: 100%;
@@ -128,6 +164,8 @@ body{
 
 /*JUEGO DE CARTAS , .cartaUsuario, .cartaMedio*/
 .cartaContrincante {
+    background-image:url(/img/cartas/redcard_back.png);
+    background-size: cover;
     width: 120px;
     height: 170px;
     background-color: gray;
@@ -149,9 +187,9 @@ body{
     height: 94vh;
     width: 97vw;
     position:absolute;
-    border:30px solid rgb(51, 36, 24);
+    border:30px solid rgb(34, 26, 19);
     margin-left: -5.25vw;
-    margin-top: -10.5vh;
+    top:0%;
 }
 .bodyGame {
     background-color: #4D6947;
@@ -190,11 +228,21 @@ body{
     border: 1px solid black;
     border-radius: 5px;
 }
+.cartaUsuario:hover{
+    background-color: rgb(218, 218, 218);
+    box-shadow: 0px 0px 10px 12px rgba(0, 0, 0, 0.26);
+}
 .cartaUsuario strong{
 position:absolute;
-    margin-top: 3.8vh;
-    margin-left: 2.4vw;
+    margin-top: 3.4vh;
+    margin-left: 2.3vw;
     font-size: 50px;
+    background-image: url(/img/diamond4.jpg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
 }
 
 .zonaJuego {
@@ -214,14 +262,17 @@ position:absolute;
     height: 249px; */
     width: 120px;
     height: 170px;
-    border: 2px dashed rgb(158, 158, 158);
+    border: 2px dashed rgba(255, 255, 255, 0.705);
+    background: linear-gradient(rgba(255, 255, 255, 0.349), rgba(153, 133, 136, 0.582));
+    
 }
 .zonaDropEnemigo{
     /* width: 160px;
     height: 249px; */
     width: 120px;
     height: 170px;
-    border: 2px dashed rgb(124, 41, 41);
+    border: 2px dashed rgba(252, 28, 28, 0.527);
+    background: linear-gradient(rgba(255, 106, 106, 0.349), rgba(175, 38, 59, 0.664))
 }
 
 .btnRobar {
@@ -248,6 +299,7 @@ position:absolute;
     flex-direction: row;
 }
 .mazoContrincante{
+    box-shadow: 0px 0px 10px 12px rgba(0, 0, 0, 0.466);
     width: 120px;
     height: 170px;
     background-image:url(/img/cartas/redcard_back.png);
@@ -258,6 +310,7 @@ position:absolute;
     left:30%;
 }
 .mazoUser{
+    box-shadow: 0px 0px 10px 12px rgba(0, 0, 0, 0.466);
     width: 120px;
     height: 170px;
     background-size: cover;
@@ -268,31 +321,32 @@ position:absolute;
 }
 /*ROBAR*/
 
- .contWinWin{
-    display: none;
-    width: 500px;
 
- }
- .contPerdedorLoser{
-    display: none;
- }
 .userSpaceCon, .userSpaceConUsr{
     position: absolute;
-    height: 100px;
+    height: 20px;
     padding: 60px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 100px;
-    background-color: #FFF3DE;
-    border-radius: 10px;
-    left:60%;
-    top: -5%;
+    background-color: whitesmoke;
+    border-bottom: 20px solid  rgb(34, 26, 19);
+    border-left: 20px solid  rgb(34, 26, 19);
+     border-bottom-left-radius: 50px;
+    left:69.95%;
+    top: -1.2%;
 }
 .userSpaceConUsr{
-    top: 80%;
-    left:10%;
+    border-top: 20px solid  rgb(34, 26, 19);
+    border-right: 20px solid  rgb(34, 26, 19);
+    border-bottom: 0px;
+    border-left: 0px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 0px;
+    top: 85.28%;
+    left:0%;
 }
 .userName {
     font-size: 21px;
@@ -300,8 +354,9 @@ position:absolute;
 }
 .turnos{
     position:absolute;
-    top:40%;
-    left:10%;
+    top:32.6%;
+    left:58.6%;
+    width: 130px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -309,11 +364,63 @@ position:absolute;
     gap: 40px;
     padding: 0px 20px;
     background-color: #FFF3DE;
-    border-radius: 10px;
-    opacity: 0.5;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 20px;
+    opacity: 0.43;
+}
+.maximo{
+    position:absolute;
+    top:32.6%;
+    left:45.7%;
+    width: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 0px 20px;
+    background-color: #FFF3DE;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 20px;
+    opacity: 0.43;
+}
+.turnosTextoPuntuacion{
+    margin-left: -1vw;
+}
+#zonaCentro3{margin-left: 100px;}
 
-    
+ .contWinWin{
+    display: none;
+    width: 500px;
+
+ }
+ .contPerdedorLoser{
+    display:none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 25, 25, 0.651);
+    top:0%;
+    left:0%;
+    align-items: center;
+    justify-content: center;
+ }
+
+.contPerdedorLoser h1{
+    font-size: 6vw;
+    color:rgb(161, 1, 1);
+    margin-top: -2vw;
 }
 
-#zonaCentro3{margin-left: 100px;}
-/*MENSAJES USR*/
+.contPerdedorLoser button{
+    position: absolute;
+    top:70%;
+    left:45.2%;
+    height: 4vw;
+    width:10vw;
+    border-radius: 10px;
+}
+@font-face {
+    font-family: 'inter';
+    src: url(/fonts/LTInternet-Bold.ttf);
+}
