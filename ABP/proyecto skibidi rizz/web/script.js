@@ -11,12 +11,27 @@ function toggleDiv(Abajo) { //tienes que poner DesplegableContenedor porque si p
 const API_KEY = '2adee592e855f44a7430d04df9f8cb6e'; // Reemplaza con tu clave real de TMDb
 //ip CARLES 172.17.40.20
 let num = 0;
-//var globales para q no declarar dos veces
-// let imagen = container.querySelector('.imgPelicula img');
-async function cargarPelisDatos(tipo = 'peliculas') {
-    const endpoint = tipo === 'series' ? 'series' : 'movies';
+
+
+let currentTipoMedia = 'peliculas'; // valor por defecto
+let currentSearchType = 'movie';
+let currentEndpoint = 'movies';
+
+
+function cambiarTipoMedia() {
+    const tipoSeleccionado = document.querySelector('.tipomedia').value;
+    currentTipoMedia = tipoSeleccionado;
+    currentEndpoint = (tipoSeleccionado === 'series') ? 'series' : 'movies';
+    currentSearchType = (tipoSeleccionado === 'series') ? 'tv' : 'movie';
+    cargarDatos(tipoSeleccionado);
+}
+
+
+
+async function cargarDatos(tipo = 'peliculas') {
+   
     try {
-        const response = await fetch(`http://localhost:8000/movies`);
+        const response = await fetch(`http://127.0.0.1:8000/${currentEndpoint}`);
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
 
         const peliculasLocales = await response.json();
@@ -33,7 +48,7 @@ async function cargarPelisDatos(tipo = 'peliculas') {
             tituloElem.textContent = peli.titulo;
             yearElem.textContent = peli.año;
 
-            const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(peli.titulo)}&year=${peli.año}`;
+            const searchUrl = `https://api.themoviedb.org/3/search/${currentSearchType}?api_key=${API_KEY}&query=${encodeURIComponent(peli.titulo)}&year=${peli.año}`;
             const searchResp = await fetch(searchUrl);
             const searchData = await searchResp.json();
 
@@ -62,17 +77,16 @@ async function cargarPelisDatos(tipo = 'peliculas') {
 }
 
 
-//filtrar pelis series cateogira
-let id = 0;
 async function cargarPorCategoria(categoriaNombre) {
+
     try {
-        const response = await fetch(`http://localhost:8000/categorias`);
+        const response = await fetch(`http://localhost:8000/${currentEndpoint}`);
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 
-        const categorias = await response.json();
+        const peliculas = await response.json();
         const contenedores = document.querySelectorAll('.pelicula');
 
-        // Ocultar todos inicialmente y limpiar contenido
+        // Ocultar y limpiar todos los contenedores
         contenedores.forEach(container => {
             container.style.display = 'none';
             container.querySelector('.titulomovie').textContent = '';
@@ -82,21 +96,15 @@ async function cargarPorCategoria(categoriaNombre) {
 
         let peliculasFiltradas = [];
 
-        if (categoriaNombre === 'Default') {
-            categorias.forEach(cat => {
-                peliculasFiltradas = peliculasFiltradas.concat(cat.peliculas);
-            });
+        
+         if (categoriaNombre.toLowerCase() === 'all') {
+            // Mostrar todas con el filter all, borre lo anterior
+            peliculasFiltradas = peliculas;
         } else {
-            const categoria = categorias.find(c => c.nombre.toLowerCase() === categoriaNombre.toLowerCase());
-            if (categoria) {
-                peliculasFiltradas = categoria.peliculas;
-            }
+            // Mostrar las que coinciden exactamente con la categoría
+            peliculasFiltradas = peliculas.filter(p => p.categoria === categoriaNombre);
         }
 
-        if (peliculasFiltradas.length === 0) {
-            // No hay películas para esa categoría => todos los contenedores quedan ocultos (display none)
-            return; // Salimos, no mostramos nada
-        }
 
         // Mostrar películas filtradas
         for (let i = 0; i < peliculasFiltradas.length && i < contenedores.length; i++) {
@@ -104,17 +112,25 @@ async function cargarPorCategoria(categoriaNombre) {
             const container = contenedores[i];
 
             container.style.display = 'block';
+            container.querySelector('.titulomovie').textContent = peli.titulo;
+            container.querySelector('.fontmovie').textContent = peli.año || peli.year || 'N/A';
 
-            const tituloElem = container.querySelector('.titulomovie');
-            const yearElem = container.querySelector('.fontmovie');
             const imgContainer = container.querySelector('.imgPelicula');
-
-            tituloElem.textContent = peli.titulo;
-            yearElem.textContent = peli.año || peli.year || 'N/A';
             imgContainer.innerHTML = '';
 
-            // Código para imagen...
-            // (igual que antes, o puedes omitir si quieres)
+            const searchUrl = `https://api.themoviedb.org/3/search/${currentSearchType}?api_key=${API_KEY}&query=${encodeURIComponent(peli.titulo)}&year=${peli.año}`;
+            const searchResp = await fetch(searchUrl);
+            const searchData = await searchResp.json();
+
+            if (searchData.results && searchData.results.length > 0 && searchData.results[0].poster_path) {
+                const img = document.createElement('img');
+                img.src = `https://image.tmdb.org/t/p/w500${searchData.results[0].poster_path}`;
+                img.alt = `Póster de ${peli.titulo}`;
+                img.classList.add('imgPelicula');
+                imgContainer.appendChild(img);
+            } else {
+                imgContainer.textContent = "Imagen no disponible";
+            }
         }
 
     } catch (error) {
@@ -122,93 +138,22 @@ async function cargarPorCategoria(categoriaNombre) {
     }
 }
 
-
-document.getElementById('generoSelect').addEventListener('change', function () {
-    const categoria = this.value;
-    cargarPorCategoria(categoria);
-});
-
-
-
-window.addEventListener('DOMContentLoaded', cargarPelisDatos);
-//document.getElementById('generoSelect').addEventListener('change', filtrarGenero);
-
-
-
-
-//codigo para llamar las pelis en el mainmovie
-
-// async function CargarMainMovie() {
-//     const peliId = obtenerParametroURL("id"); // ← obtenemos el ID desde la URL
-//     if (!peliId) return;
-
-//     try {
-//         const response = await fetch(`http://localhost:8000/movies`);
-//         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
-
-//         const peliculasLocales = await response.json();
-//         const peli = peliculasLocales.find(p => p.id == peliId); // ← buscamos la que tenga ese ID
-
-//         if (!peli) {
-//             console.error("Película no encontrada con ese ID.");
-//             return;
-//         }
-
-//         const container = document.querySelector('.informacionPeli');
-//         const tituloElem = container.querySelector('.tituloMainP');
-//         const descriptionElem = container.querySelector('.descrMainP');
-//         const imgContainer = container.querySelector('.imagenMainP');
-
-//         tituloElem.textContent = peli.titulo;
-//         descriptionElem.textContent = peli.descripcion;
-
-//         const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(peli.titulo)}&year=${peli.year}`;
-//         const searchResp = await fetch(searchUrl);
-//         const searchData = await searchResp.json();
-
-//         if (searchData.results && searchData.results.length > 0) {
-//             const posterPath = searchData.results[0].poster_path;
-//             if (posterPath) {
-//                 const img = document.createElement('img');
-//                 img.src = `https://image.tmdb.org/t/p/w500${posterPath}`;
-//                 img.alt = `Póster de ${peli.titulo}`;
-//                 img.classList.add('imagenMainP');
-//                 imgContainer.appendChild(img);
-//             } else {
-//                 imgContainer.textContent = "Imagen no disponible";
-//             }
-//         } else {
-//             imgContainer.textContent = "Imagen no disponible";
-//         }
-
-//     } catch (error) {
-//         console.error("Error al cargar película:", error);
-//     }
-// }
-
-
-
-// //esto es q para q este en la pagina esa q se cargue la funcion
-// if (window.location.pathname.endsWith('mainmovie.html')) {
-//     CargarMainMovie();
-// }
-async function buscarPelicula() {
+window.addEventListener('DOMContentLoaded', cargarDatos);
+async function buscador() {
     const tituloBuscado = document.getElementById('tituloPelicula').value.toLowerCase().trim();
 
     if (!tituloBuscado) {
-        // Si el input está vacío, mostrar todas las películas
-        cargarPelisDatos();
+        cargarPorCategoria('all');
         return;
     }
 
     try {
-        const response = await fetch('http://localhost:8000/movies');
+        const response = await fetch(`http://localhost:8000/${currentEndpoint}`);
         if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
 
         const peliculas = await response.json();
         const contenedores = document.querySelectorAll('.pelicula');
 
-        // Ocultar y limpiar todos primero
         contenedores.forEach(c => {
             c.style.display = 'none';
             c.querySelector('.titulomovie').textContent = '';
@@ -232,7 +177,7 @@ async function buscarPelicula() {
             yearElem.textContent = peli.año;
             imgContainer.innerHTML = '';
 
-            const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(peli.titulo)}&year=${peli.año}`;
+            const searchUrl = `https://api.themoviedb.org/3/search/${currentSearchType}?api_key=${API_KEY}&query=${encodeURIComponent(peli.titulo)}&year=${peli.año}`;
             const searchResp = await fetch(searchUrl);
             const searchData = await searchResp.json();
 
@@ -256,4 +201,67 @@ async function buscarPelicula() {
     } catch (error) {
         console.error("Error al buscar película:", error);
     }
+}
+//mainmovie para cargar datos de la pelicula escogida
+async function CargarMainMovie() {
+    const params = new URLSearchParams(window.location.search);
+    const peliId = params.get('id');
+
+    if (!peliId) {
+        console.warn("❌ No se encontró el parámetro 'id' en la URL.");
+        return;
+    }
+
+    try {
+        const response = await fetch(`http://localhost:8000/movies`);
+        const peliculas = await response.json();
+        const peli = peliculas.find(p => p.id == peliId);
+
+        if (!peli) {
+            console.error("❌ Película no encontrada con ID:", peliId);
+            return;
+        }
+
+        console.log("🎬 Película cargada: ", peli);
+
+        const tituloElem = document.getElementById('tituloMainP');
+        const descrElem = document.getElementById('descrMainP');
+        const imgContainer = document.getElementById('imagenMainP');
+
+        if (!tituloElem || !descrElem || !imgContainer) {
+            console.error("❌ Faltan elementos HTML con IDs 'tituloMainP', 'descrMainP' o 'imagenMainP'");
+            return;
+        }
+
+        tituloElem.textContent = peli.titulo;
+        descrElem.textContent = peli.descripcion;
+
+        // Cargar imagen desde TMDb
+        const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(peli.titulo)}&year=${peli.año}`;
+        const searchResp = await fetch(searchUrl);
+        const searchData = await searchResp.json();
+
+        imgContainer.innerHTML = '';
+
+        if (searchData.results && searchData.results.length > 0 && searchData.results[0].poster_path) {
+            const img = document.createElement('img');
+            img.src = `https://image.tmdb.org/t/p/w500${searchData.results[0].poster_path}`;
+            img.alt = `Póster de ${peli.titulo}`;
+            img.classList.add('imagenMainP');
+            imgContainer.appendChild(img);
+        } else {
+            imgContainer.textContent = "Imagen no disponible";
+        }
+
+    } catch (error) {
+        console.error("❌ Error al cargar la película:", error);
+    }
+}
+
+
+ console.log(window.location.pathname)
+
+// lo d focking siempre de q si estas te carga si no eeeeaaaa
+if (window.location.pathname.endsWith('mainmovie.html')) {
+    CargarMainMovie();  
 }

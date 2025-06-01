@@ -45,7 +45,7 @@
                     <a href="login.html" target="_blank">inscríbete</a>
                 </div>
                 <input class="buscadorIndex" type="text" id="tituloPelicula" placeholder="Ej: The Mask">
-                <button class="btnBuscar" onclick="buscarPelicula()">Buscar</button>
+                <button class="btnBuscar" onclick="buscador()">Buscar</button>
                 <div class="signin">
                     <a href="favpage.html"><img src="/img/favicon.png" alt="Favoritos"></a>
                 </div>
@@ -53,13 +53,17 @@
         </div>
 
         <div class="filterbar">
-            <select class="tipomedia">
-                <option value="peliculas" class="fontgeneric">PELÍCULAS</option>
+            <select class="tipomedia" onchange="cambiarTipoMedia()">
+                <option value="movies" class="fontgeneric">PELÍCULAS</option>
                 <option value="series" class="fontgeneric">SERIES</option>
             </select>
 
             <select id="generoSelect" class="tipomedia" onchange="cargarPorCategoria(this.value)">
-                <option value="Default" class="fontgeneric">MIX</option>
+                <option value="all" class="fontgeneric">ALL</option>
+                <option value="Accion" class="fontgeneric">ACCION</option>
+                <option value="Aventura" class="fontgeneric">AVENTURA</option>
+                <option value="Sci-Fi" class="fontgeneric">SCI-FI</option>
+
                 <option value="Horror" class="fontgeneric">HORROR</option>
                 <option value="Comedia" class="fontgeneric">COMEDIA</option>
                 <option value="Misterio" class="fontgeneric">MISTERIO</option>
